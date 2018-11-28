@@ -37,10 +37,11 @@ class AddFood : AppCompatActivity() {
             showPic.setImageBitmap((imv.getDrawable() as BitmapDrawable).bitmap)
             val image= (imv.getDrawable() as BitmapDrawable).bitmap
             val database = FirebaseDatabase.getInstance()
-            val myRef = database.getReference("Name, Restaurant")
-            myRef.setValue(DataProvider.getData())
 
-        }
+            val myRef = database.getReference("Data")
+            myRef.child("Food").setValue(DataProvider.getData())
+
+        }  
 
         if(!hasCamera()){
             btn_Photo.isEnabled = false;
