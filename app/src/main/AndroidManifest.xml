@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".AddFood">
         </activity>
+        <activity android:name=".FoodList">
+        </activity>
     </application>
 
 </manifest>

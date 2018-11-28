@@ -21,7 +21,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,Setting::class.java)
             startActivity(intent)
         }
-
+        mainpage.setOnClickListener {
+            val intent = Intent(this,MainApp::class.java)
+            startActivity(intent)
+        }
 
             }
 }

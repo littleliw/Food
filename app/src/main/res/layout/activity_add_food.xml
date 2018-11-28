@@ -47,9 +47,15 @@
             android:text="Add"
             android:id="@+id/addBtn"
     />
-    <TextView android:layout_width="match_parent"
+    <TextView android:layout_width="100dp"
               android:layout_height="50dp"
-              android:id="@+id/showFood"   />
+              android:id="@+id/showFood"
+               android:text="Restaurant"
+               android:textSize="18dp"/>
+    <EditText android:layout_width="150dp"
+              android:layout_height="50dp"
+                android:id="@+id/restaurant"/>
+
     <ImageView android:layout_width="300dp"
                android:layout_height="170dp"
                android:id="@+id/showPic"

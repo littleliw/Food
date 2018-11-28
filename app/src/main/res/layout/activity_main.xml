@@ -18,6 +18,10 @@
             android:text="Setting"
             android:clickable="true"
     android:id="@+id/setting"/>
+  <Button android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/mainpage"
+  />
 
 
 </LinearLayout>
