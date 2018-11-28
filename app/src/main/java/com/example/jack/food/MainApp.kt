@@ -43,7 +43,8 @@ class MainApp : AppCompatActivity() {
         })
         tries.setOnClickListener {
             tries.setText(KeepFooddata.size.toString())
-            tries.setText(KeepFooddata[1].restaurant.toString()+ "  "+ KeepFooddata[1].name)
+            tries.setText(KeepFooddata[1].name)
+            restaurantdisplay.setText(KeepFooddata[1].restaurant)
         }
     }
 }
