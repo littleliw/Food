@@ -11,6 +11,7 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_add_food.*
 import kotlinx.android.synthetic.main.activity_main.*
 import android.graphics.drawable.BitmapDrawable
+import android.provider.ContactsContract
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -25,17 +26,22 @@ class AddFood : AppCompatActivity() {
         setContentView(R.layout.activity_add_food)
 
         var keepfood=" "
+        var keepres=" "
 
         addBtn.setOnClickListener {
 
-            showFood.setText(food.text.toString())
-            keepfood=showFood.text.toString()
-
+            showFood.setText(restaurant.text.toString())
+            keepfood=food.text.toString()
+            keepres=restaurant.text.toString()
+            DataProvider.adddata(keepfood,keepres)
             showPic.setImageBitmap((imv.getDrawable() as BitmapDrawable).bitmap)
+            val image= (imv.getDrawable() as BitmapDrawable).bitmap
             val database = FirebaseDatabase.getInstance()
-            val myRef = database.getReference("Name and Picture")
-            myRef.setValue(keepfood)
+            val myRef = database.getReference("Name, Restaurant")
+            myRef.setValue(DataProvider.getData())
+
         }
+
         if(!hasCamera()){
             btn_Photo.isEnabled = false;
         }
@@ -56,6 +62,7 @@ class AddFood : AppCompatActivity() {
             val extras = data!!.extras;
             val photo = extras.get("data") as Bitmap;
             imv.setImageBitmap(photo);
+
         }
     }
 }
