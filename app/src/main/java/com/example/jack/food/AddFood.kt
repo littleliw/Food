@@ -9,10 +9,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import kotlinx.android.synthetic.main.activity_add_food.*
-import kotlinx.android.synthetic.main.activity_main.*
 import android.graphics.drawable.BitmapDrawable
-import android.provider.ContactsContract
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -31,7 +28,7 @@ class AddFood : AppCompatActivity() {
         addBtn.setOnClickListener {
 
             showFood.setText(restaurant.text.toString())
-            keepfood=food.text.toString()
+            keepfood=fooddd.text.toString()
             keepres=restaurant.text.toString()
             DataProvider.adddata(keepfood,keepres)
             showPic.setImageBitmap((imv.getDrawable() as BitmapDrawable).bitmap)

@@ -40,7 +40,7 @@
     <EditText android:layout_width="300dp"
               android:layout_height="50dp"
               android:hint="Burger"
-              android:id="@+id/food"
+              android:id="@+id/fooddd"
     />
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
