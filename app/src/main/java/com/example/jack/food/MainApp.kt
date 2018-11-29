@@ -31,7 +31,7 @@ class MainApp : AppCompatActivity() {
 
 
 
-        val k=KeepFooddata.size.toInt()
+        val k=KeepFooddata.size
         Log.d("numbers",k.toString())
 
 
