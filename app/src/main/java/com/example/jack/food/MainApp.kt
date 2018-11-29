@@ -1,5 +1,10 @@
 package com.example.jack.food
 
+import android.content.Context
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.annotation.Keep
@@ -14,13 +19,19 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main_app.*
 
 
-class MainApp : AppCompatActivity() {
+class MainApp : AppCompatActivity(), SensorEventListener {
 
+    private var mSensorManager : SensorManager ?= null
+    private var lastUpdate : Long = 0
+
+    private var color : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_app)
 
+        mSensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        lastUpdate = System.currentTimeMillis()
 
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("Data/Food")
@@ -41,10 +52,52 @@ class MainApp : AppCompatActivity() {
                 //Log.w(FragmentActivity.TAG, "Failed to read value.", error.toException())
             }
         })
-        tries.setOnClickListener {
+
+
+        /*tries.setOnClickListener {
             tries.setText(KeepFooddata.size.toString())
             tries.setText(KeepFooddata[1].name)
-            restaurantdisplay.setText(KeepFooddata[1].restaurant)
+            restaurantdisplay.setText(KeepFooddata[1].restaurant)*/
+        }
+
+    override fun onSensorChanged(event: SensorEvent?) {
+        if (event!!.sensor.type == Sensor.TYPE_ACCELEROMETER){
+            getAccelerometer(event)
         }
     }
+
+    private fun getAccelerometer(event: SensorEvent){
+        val values = event.values
+
+        val x = values[0]
+        val y = values[1]
+        val z = values[2]
+
+        val accel = ((x*x) + (y*y) + (z*z))/(SensorManager.GRAVITY_EARTH*SensorManager.GRAVITY_EARTH)
+
+        val actualTime = System.currentTimeMillis()
+
+        if(accel >= 2){
+            if((actualTime - lastUpdate) < 200){
+                return
+            }
+
+            //TODO: SHOW PICTURES
+            imageView1.setImageResource(R.drawable.start)
+        }
+    }
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mSensorManager!!.registerListener(this, mSensorManager!!.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mSensorManager!!.unregisterListener(this)
+    }
+
 }
