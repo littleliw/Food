@@ -30,8 +30,11 @@ class AddFood : AppCompatActivity() {
             showFood.setText(restaurant.text.toString())
             keepfood=fooddd.text.toString()
             keepres=restaurant.text.toString()
-            DataProvider.adddata(keepfood,keepres)
+
+            val keeploc="https://firebasestorage.googleapis.com/v0/b/food-73d82.appspot.com/o/burger.jpg?alt=media&token=173f92ce-e45f-4597-bf27-a0e9918b1526"
+            DataProvider.adddata(keepfood,keepres,keeploc)
             showPic.setImageBitmap((imv.getDrawable() as BitmapDrawable).bitmap)
+
             val image= (imv.getDrawable() as BitmapDrawable).bitmap
             val database = FirebaseDatabase.getInstance()
 

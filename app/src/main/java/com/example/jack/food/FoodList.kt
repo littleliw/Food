@@ -8,9 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_food_list.*
 import com.example.jack.food.MainActivity.Companion.KeepFooddata
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.row_main.view.*
 
 class FoodList : AppCompatActivity() {
@@ -56,7 +59,7 @@ class FoodList : AppCompatActivity() {
             if (convertView == null) { //If we've already called inflater once, convertView will not be null. So we call layoutInflater only when the inflater is not yet called.
                 val layoutInflater = LayoutInflater.from(viewGroup!!.context)
                 view = layoutInflater.inflate(R.layout.row_main, viewGroup, false)
-                val viewHolder = ViewHolder(view.fooddd, view.rest)
+                val viewHolder = ViewHolder(view.fooddd, view.rest,view.listImg)
                 view.tag = viewHolder
             } else {
                 view = convertView
@@ -65,11 +68,12 @@ class FoodList : AppCompatActivity() {
             val viewHolder = view.tag as ViewHolder
             viewHolder.foodTextView.text = course.name
             viewHolder.restaurantTextView.text = course.restaurant
+            Picasso.with(context).load(course.loc).into(viewHolder.locationImg)
 
             return view
         }
 
-        private class ViewHolder(val foodTextView: TextView, val restaurantTextView: TextView) {
+        private class ViewHolder(val foodTextView: TextView, val restaurantTextView: TextView, val locationImg: ImageView) {
 
 
         }
