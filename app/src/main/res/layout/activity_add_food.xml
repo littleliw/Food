@@ -46,7 +46,12 @@
             android:layout_height="wrap_content"
             android:text="Add"
             android:id="@+id/addBtn"
-    />
+    /><Button android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Choose"
+              android:id="@+id/choosebtn"
+
+/>
     <TextView android:layout_width="100dp"
               android:layout_height="50dp"
               android:id="@+id/showFood"
