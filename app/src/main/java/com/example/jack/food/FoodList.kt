@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,10 +30,6 @@ class FoodList : AppCompatActivity() {
 
 
 
-
-
-
-
     }
     private class myCustomAdapter(var context: Context, var objects: MutableList<KeepFoodObject>): BaseAdapter() { //Context is the root obj. Referring to any obj in the layout activity_main.xml (ex.ListView: id:lvMain, TextView: id:tvMain)
         private val names = arrayListOf<KeepFoodObject>()
@@ -51,7 +48,7 @@ class FoodList : AppCompatActivity() {
         override fun getView(position: Int, convertView: View?, viewGroup: ViewGroup?): View {
 
             //update data into viewHolder instead of layout directly, dont need to inflate layout everytime when called
-            val greyColor = Color.parseColor("#E0E0E0")
+
 
             val view: View
             val course = objects[position]

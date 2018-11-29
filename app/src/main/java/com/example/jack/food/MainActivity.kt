@@ -13,6 +13,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
+import android.util.Log
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_add_food.*
 import java.io.InputStream
@@ -28,17 +29,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("Data/Food")
+        val myRef = database.getReference("Food")
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 if (dataSnapshot!!.exists()) {
+                    Log.d("keeploc","COME ON!")
+                    KeepFooddata.clear()
                     for (i in dataSnapshot.children) {
+
                         val value = i.getValue(KeepFoodObject::class.java)
                         KeepFooddata.add(value!!)
 
-
+                        Log.d("keeploc","TESTTTTTTTTT!")
                     }
+                    Log.d("keeploc","DONE!!!!!!!!!!")
+
                 }
             }
 

@@ -30,30 +30,12 @@ class MainApp : AppCompatActivity() {
         setContentView(R.layout.activity_main_app)
 
 
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("Data/Food")
 
-        myRef.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
+        val k=KeepFooddata.size.toInt()
+        Log.d("numbers",k.toString())
 
-                if (dataSnapshot!!.exists()) {
-                    for (i in dataSnapshot.children) {
-                        val value = i.getValue(KeepFoodObject::class.java)
-                        KeepFooddata.add(value!!)
-                    }
-                }
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                //Log.w(FragmentActivity.TAG, "Failed to read value.", error.toException())
-            }
-        })
-       /* tries.setOnClickListener {
-            tries.setText(KeepFooddata.size.toString())
-            tries.setText(KeepFooddata[1].name)
-            restaurantdisplay.setText(KeepFooddata[1].restaurant)
-        }*/
+
 
     }
 
