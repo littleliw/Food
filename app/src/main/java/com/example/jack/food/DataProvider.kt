@@ -7,9 +7,9 @@ object DataProvider {
     fun getData(): ArrayList<KeepFoodObject>
     {return data}
 
-    fun adddata(name:String,restaurant:String){
+    fun adddata(name:String,restaurant:String,loc:String){
 
-        data.add(KeepFoodObject(name,restaurant))
+        data.add(KeepFoodObject(name,restaurant,loc))
     }
 
 
