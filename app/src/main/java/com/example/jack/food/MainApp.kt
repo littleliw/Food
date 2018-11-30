@@ -22,8 +22,11 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_add_food.view.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main_app.*
+import java.util.*
 
 
 class MainApp : AppCompatActivity(), SensorEventListener {
@@ -69,9 +72,16 @@ class MainApp : AppCompatActivity(), SensorEventListener {
                 return
             }
 
-            imageView1.setImageResource(R.drawable.start)
+            //
+            ***Shake to change
+            //
+
         }
+
+
+
     }
+
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
     }
