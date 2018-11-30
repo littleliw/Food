@@ -6,6 +6,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/try2bgadd"
         tools:context=".MainActivity">
     android:weightSum="2"
 
@@ -14,6 +15,7 @@
 
         <ImageView
                 android:id="@+id/imv"
+                android:layout_marginTop="30dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/ic_launcher_background"
@@ -25,7 +27,7 @@
     </FrameLayout>
     <Button
 
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
 
             android:background="@drawable/rec3"
 
@@ -56,7 +58,7 @@
               android:hint="Burger"
               android:id="@+id/fooddd"
               android:gravity="center"
-              android:background="@drawable/rec5"
+              android:background="@drawable/rec7"
     />
 
     <TextView android:layout_width="match_parent"
@@ -72,7 +74,7 @@
     <EditText android:layout_width="match_parent"
               android:layout_height="50dp"
               android:id="@+id/restaurant"
-              android:background="@drawable/rec5"
+              android:background="@drawable/rec7"
               android:hint="Mc Donald"
               android:gravity="center"
     />
