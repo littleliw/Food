@@ -50,8 +50,6 @@ class AddFood : AppCompatActivity()  {
         var keepres=" "
 
 
-
-
         addBtn.setOnClickListener {
 
             //showFood.setText(restaurant.text.toString())
@@ -85,6 +83,7 @@ class AddFood : AppCompatActivity()  {
             image.compress(Bitmap.CompressFormat.JPEG, 100, baos)
             val data = baos.toByteArray()
 
+            //Uploading to the Storage + Get URL Download
             val uploadTask = mountainsRef.putBytes(data).addOnSuccessListener () { taskSnapshot ->
                 // success
                 Toast.makeText(applicationContext, "Success...", Toast.LENGTH_SHORT).show();
@@ -94,6 +93,7 @@ class AddFood : AppCompatActivity()  {
                     Log.d("keeploc", dUrl)
                     Toast.makeText(applicationContext, "Complete..", Toast.LENGTH_SHORT).show();
 
+                    //Store values to the Firebase Database
                     val myRef = database.getReference("Food/"+ " "+keepfood+" "+keepres)
                     val data2 = KeepFoodObject(keepfood,keepres,dUrl)
                     Log.d("keeploc","Work")
@@ -129,7 +129,7 @@ class AddFood : AppCompatActivity()  {
             val extras = data!!.extras;
             val photo = extras.get("data") as Bitmap;
             imv.setImageBitmap(photo);
-            Toast.makeText(applicationContext, "Test2...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(applicationContext, "Upload Succeeded...", Toast.LENGTH_SHORT).show();
 
 
 

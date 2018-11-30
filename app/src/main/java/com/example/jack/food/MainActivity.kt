@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     companion object  {
         var KeepFooddata:MutableList<KeepFoodObject> = mutableListOf()
     }
+
+    //Pull the data from the Firebase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

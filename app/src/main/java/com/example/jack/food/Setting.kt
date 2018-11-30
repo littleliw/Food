@@ -14,6 +14,8 @@ import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_setting.*
 import java.io.IOException
 
+
+//We do not use this "Setting" class anymore. It is just one of the tryout area.
 class Setting: AppCompatActivity(), View.OnClickListener {
 
     private var filePath: Uri? = null;

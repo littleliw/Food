@@ -32,6 +32,7 @@ import java.util.*
 
 class MainApp : AppCompatActivity(), SensorEventListener {
 
+    //Initiate the Sensor (Accelerometer)
     private var mSensorManager : SensorManager ?= null
     private var lastUpdate : Long = 0
 
@@ -39,13 +40,15 @@ class MainApp : AppCompatActivity(), SensorEventListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_app)
 
+        //Applications of the Sensor (from the Initiate Section)
         mSensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         lastUpdate = System.currentTimeMillis()
 
-
+        //NOT USED!
         val k=KeepFooddata.size
         Log.d("numbers",k.toString())
 
+        //GO TO LIST
         button.setOnClickListener {
             val intent = Intent(this,FoodList::class.java)
             startActivity(intent)
@@ -76,6 +79,7 @@ class MainApp : AppCompatActivity(), SensorEventListener {
                 return
             }
 
+            //Randomize the Photos from the database (Firebase)
             val random = Random();
             val i=  (Random().nextInt(KeepFooddata.size))
             Log.d("random",i.toString())
