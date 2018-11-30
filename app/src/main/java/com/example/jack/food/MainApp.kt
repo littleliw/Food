@@ -1,6 +1,7 @@
 package com.example.jack.food
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -45,7 +46,10 @@ class MainApp : AppCompatActivity(), SensorEventListener {
         val k=KeepFooddata.size
         Log.d("numbers",k.toString())
 
-
+        button.setOnClickListener {
+            val intent = Intent(this,FoodList::class.java)
+            startActivity(intent)
+        }
 
 
     }
@@ -98,4 +102,5 @@ class MainApp : AppCompatActivity(), SensorEventListener {
         super.onPause()
         mSensorManager!!.unregisterListener(this)
     }
+
 }

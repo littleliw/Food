@@ -54,7 +54,7 @@ class AddFood : AppCompatActivity()  {
 
         addBtn.setOnClickListener {
 
-            showFood.setText(restaurant.text.toString())
+            //showFood.setText(restaurant.text.toString())
             keepfood=fooddd.text.toString()
             keepres=restaurant.text.toString()
             val database = FirebaseDatabase.getInstance()
