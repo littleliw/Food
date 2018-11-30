@@ -60,7 +60,7 @@ class AddFood : AppCompatActivity()  {
             val database = FirebaseDatabase.getInstance()
             var keeploc=" "
             //DataProvider.adddata(keepfood,keepres,keeploc)
-            showPic.setImageBitmap((imv.getDrawable() as BitmapDrawable).bitmap)
+            //showPic.setImageBitmap((imv.getDrawable() as BitmapDrawable).bitmap)
 
             val image= (imv.getDrawable() as BitmapDrawable).bitmap
             /////////////////////////////////////

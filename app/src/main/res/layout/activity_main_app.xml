@@ -14,11 +14,11 @@
           android:background="@color/colorPrimaryDark"
 />
     <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/showimage"
             android:layout_width="match_parent"
-               android:layout_height="250dp"
-               android:src="@drawable/burger"
-        />
+            android:layout_height="250dp"
+            android:src="@drawable/burger"
+    />
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
             android:padding="10dp"

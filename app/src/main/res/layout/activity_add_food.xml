@@ -8,64 +8,74 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
     android:weightSum="2"
+
     <FrameLayout android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
+                 android:layout_height="200dp">
 
         <ImageView
                 android:id="@+id/imv"
                 android:layout_width="152dp"
-                android:layout_height="152dp"
+                android:layout_height="match_parent"
                 android:src="@drawable/burger"
-
-                android:layout_marginLeft="100dp"
-               />
-
-        <Button
-                android:id="@+id/btn_Photo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="launchCamera"
-                android:text="Camera"
-                android:layout_marginTop="148dp"
-                android:layout_marginLeft="130dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rec"
 
         />
 
     </FrameLayout>
-    <TextView android:layout_width="100dp"
+    <Button
+            android:id="@+id/btn_Photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="launchCamera"
+            android:text="Camera"
+            android:layout_gravity="center"
+
+
+    />
+    <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:padding="10dp"
               android:text="Food Name"
               android:textColor="#000"
+              android:gravity="center"
+              android:textSize="20dp"
+              android:background="@drawable/rec4"
+
     />
-    <EditText android:layout_width="300dp"
+    <EditText android:layout_width="match_parent"
               android:layout_height="50dp"
               android:hint="Burger"
               android:id="@+id/fooddd"
+              android:gravity="center"
+              android:background="@drawable/rec4"
     />
-    <Button android:layout_width="wrap_content"
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:id="@+id/showFood"
+              android:text="Restaurant"
+              android:textSize="20dp"
+              android:background="@drawable/rec4"
+              android:textColor="#000"
+              android:gravity="center"
+    />
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:id="@+id/restaurant"
+              android:background="@drawable/rec4"
+              android:hint="Mc Donald"
+              android:gravity="center"
+    />
+    <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add"
             android:id="@+id/addBtn"
-    /><Button android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="Choose"
-              android:id="@+id/choosebtn"
-              android:clickable="true"
-
-/>
-    <TextView android:layout_width="100dp"
-              android:layout_height="50dp"
-              android:id="@+id/showFood"
-               android:text="Restaurant"
-               android:textSize="18dp"/>
-    <EditText android:layout_width="150dp"
-              android:layout_height="50dp"
-                android:id="@+id/restaurant"/>
-
-    <ImageView android:layout_width="300dp"
-               android:layout_height="170dp"
-               android:id="@+id/showPic"
+            android:gravity="center"
     />
+
+
+
 
 </LinearLayout>

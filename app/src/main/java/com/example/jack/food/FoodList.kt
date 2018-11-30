@@ -63,8 +63,8 @@ class FoodList : AppCompatActivity() {
             }
 
             val viewHolder = view.tag as ViewHolder
-            viewHolder.foodTextView.text = course.name
-            viewHolder.restaurantTextView.text = course.restaurant
+            viewHolder.foodTextView.text = "FoodName: "+" "+course.name
+            viewHolder.restaurantTextView.text = "Restaurant: "+ course.restaurant
             Picasso.with(context).load(course.loc).into(viewHolder.locationImg)
 
             return view

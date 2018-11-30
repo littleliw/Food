@@ -72,9 +72,12 @@ class MainApp : AppCompatActivity(), SensorEventListener {
                 return
             }
 
-            //
-            ***Shake to change
-            //
+            val random = Random();
+            val i=  (Random().nextInt(KeepFooddata.size))
+            Log.d("random",i.toString())
+            restaurantdisplay.setText(KeepFooddata[i].restaurant)
+            tries.setText(KeepFooddata[i].name)
+            Picasso.with(applicationContext).load(KeepFooddata[i].loc).into(showimage)
 
         }
 
